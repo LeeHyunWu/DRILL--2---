@@ -1,7 +1,7 @@
 from pico2d import *
 import math
 
-os.chdir('C:/Users/user/Desktop/새 폴더-2d게임 과제')
+os.chdir('D:/2DGP/DRILL/06 과제 제출/drill-#06 이미지')
 
 open_canvas()
 
@@ -11,12 +11,10 @@ character = load_image('character.png')
 y = 90
 x = 400
 i = 0
-s = math.sin(i / 360 * 2 * math.pi)
-c = math.cos(i / 360 * 2 * math.pi)
 
 
 while(1):  
-    while(x<800):
+    while(x<780):
         clear_canvas_now()
         grass.draw_now(400,30)
         character.draw_now(x, y)
@@ -24,7 +22,7 @@ while(1):
         delay(0.01)
 
         
-    while(y<600):
+    while(y<560):
         clear_canvas_now()
         grass.draw_now(400,30)
         character.draw_now(x, y)
@@ -32,7 +30,7 @@ while(1):
         delay(0.01)
 
         
-    while(x>0):
+    while(x>20):
         clear_canvas_now()
         grass.draw_now(400,30)
         character.draw_now(x, y)
@@ -41,8 +39,7 @@ while(1):
 
         
     while(y>90):
-         
-        canvas_clear()
+        clear_canvas_now()
         grass.draw_now(400,30)
         character.draw_now(x, y)
         y -= 2
@@ -57,13 +54,15 @@ while(1):
         delay(0.01)
 
 
-    while(i<180):
+    while(i<360):
+        s = math.sin(i / 360 * 2 * math.pi)
+        c = math.cos(i / 360 * 2 * math.pi)
         clear_canvas_now()
         grass.draw_now(400,30)
-        character.draw_now(400+(s*200), 300+(y*200))
+        character.draw_now(400+(s*210), 300-(c*210))
         i += 2
         delay(0.01)
-
+    i = 0
 
 
     
